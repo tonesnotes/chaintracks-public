@@ -1,0 +1,20 @@
+{
+  "name": "staging-chaintracks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "v": "node -v",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cwi/chaintracks-base": "^0.6.26",
+    "@cwi/chaintracks-core": "^0.6.34",
+    "knex": "^2.5.1",
+    "dotenv": "^16.0.1",
+    "node": "16.19.1"
+  }
+}
