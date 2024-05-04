@@ -1,6 +1,8 @@
 const { startChaintracksService, ChaintracksService } = require("@cwi/chaintracks-core")
+require('dotenv').config()
 
-const chain = 'main'
+const chain = process.env.CHAIN
+
 const options = {
 	...ChaintracksService.createChaintracksServiceOptions(),
 	httpsPrivateKeyPath: '/home/headersync/certs/privkey.pem',

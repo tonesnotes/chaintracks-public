@@ -13,8 +13,8 @@
   "dependencies": {
     "@cwi/chaintracks-base": "^0.6.26",
     "@cwi/chaintracks-core": "^0.6.34",
+    "dotenv": "^16.4.5",
     "knex": "^2.5.1",
-    "dotenv": "^16.0.1",
     "node": "16.19.1"
   }
 }
