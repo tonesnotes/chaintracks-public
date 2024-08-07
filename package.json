@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@cwi/chaintracks-base": "^0.6.36",
-    "@cwi/chaintracks-core": "^0.6.52",
+    "@cwi/chaintracks-core": "^0.6.53",
     "dotenv": "^16.4.5",
     "knex": "^2.5.1",
     "node": "16.19.1"
