@@ -1,5 +1,5 @@
 {
-  "name": "staging-chaintracks",
+  "name": "@cwi/chaintracks-public",
   "version": "1.0.19",
   "description": "",
   "main": "index.js",
