@@ -8,6 +8,7 @@ const options = {
 	httpsPrivateKeyPath: '/home/headersync/certs/privkey.pem',
 	httpsCertificatePath: '/home/headersync/certs/fullchain.pem'
 }
+debugger;
 // HTTPS
 const servicePromise = startChaintracksService(chain, options)
 // HTTP
