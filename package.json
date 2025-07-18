@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cwi/chaintracks-base": "^0.7.3",
-    "@cwi/chaintracks-core": "^0.7.4",
+    "@cwi/chaintracks-base": "^0.7.5",
+    "@cwi/chaintracks-core": "^0.7.5",
     "dotenv": "^16.4.5",
     "knex": "^2.5.1",
     "node": "22.12.0"
