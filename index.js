@@ -17,10 +17,24 @@ const credentials = { key: privateKey, cert: certificate };
 
 // Create HTTPS server
 const server = https.createServer(credentials, (req, res) => {
+	// Set CORS headers to allow all origins
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+	
+	// Handle preflight OPTIONS requests
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204); // No Content for OPTIONS
+    res.end();
+    return;
+  }
+
   // Redirect all requests to the target domain
   const Location = `https://${chain}net-chaintracks.babbage.systems${req.url}`
   console.log(`redirect to ${Location}`)
-  res.writeHead(301, { Location });
+  res.writeHead(301, { Location,
+    'Access-Control-Allow-Origin': '*' // Ensure CORS header is included in redirect
+	});
   res.end();
 });
 
