@@ -19,12 +19,14 @@ const credentials = { key: privateKey, cert: certificate };
 const server = https.createServer(credentials, (req, res) => {
 	// Set CORS headers to allow all origins
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader('Access-Control-Expose-Headers', '*');
+  res.setHeader('Access-Control-Allow-Private-Network', 'true');
 	
 	// Handle preflight OPTIONS requests
   if (req.method === 'OPTIONS') {
-    res.writeHead(204); // No Content for OPTIONS
+    res.sendStatus(200); // No Content for OPTIONS
     res.end();
     return;
   }
@@ -32,8 +34,13 @@ const server = https.createServer(credentials, (req, res) => {
   // Redirect all requests to the target domain
   const Location = `https://${chain}net-chaintracks.babbage.systems${req.url}`
   console.log(`redirect to ${Location}`)
-  res.writeHead(301, { Location,
-    'Access-Control-Allow-Origin': '*' // Ensure CORS header is included in redirect
+	res.writeHead(301, {
+		Location,
+		'Access-Control-Allow-Origin': '*',
+		'Access-Control-Allow-Headers': '*',
+		'Access-Control-Allow-Methods': '*',
+		'Access-Control-Expose-Headers': '*',
+		'Access-Control-Allow-Private-Network': 'true'
 	});
   res.end();
 });
